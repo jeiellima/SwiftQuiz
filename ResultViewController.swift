@@ -13,6 +13,9 @@ class ResultViewController: UIViewController {
     var answersLabel: UILabel!
     var correctAnswerLabel: UILabel!
     var wrongAnswerLabel: UILabel!
+    var percentAnswerLabel: UILabel!
+    var restartButton: UIButton!
+    let screenSize = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +25,7 @@ class ResultViewController: UIViewController {
     
     func setupView() {
         
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .systemGroupedBackground
         resultTitleLabel = UILabel()
         resultTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         resultTitleLabel.text = "Resultado"
@@ -38,15 +41,34 @@ class ResultViewController: UIViewController {
         correctAnswerLabel = UILabel()
         correctAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
         correctAnswerLabel.text = "Respostas corretas: 00"
+        correctAnswerLabel.textColor = .white
+        correctAnswerLabel.backgroundColor = .systemGreen
         correctAnswerLabel.font = .systemFont(ofSize: 20)
         view.addSubview(correctAnswerLabel)
         
         wrongAnswerLabel = UILabel()
         wrongAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
         wrongAnswerLabel.text = "Respostas erradas: 00"
+        wrongAnswerLabel.textColor = .white
+        wrongAnswerLabel.backgroundColor = .systemRed
         wrongAnswerLabel.font = .systemFont(ofSize: 20)
         view.addSubview(wrongAnswerLabel)
         
+        percentAnswerLabel = UILabel()
+        percentAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
+        percentAnswerLabel.text = "100%"
+        percentAnswerLabel.font = .boldSystemFont(ofSize: 90)
+        view.addSubview(percentAnswerLabel)
+        
+        restartButton = UIButton()
+        restartButton.setTitle("Reiniciar", for: .normal)
+        restartButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        restartButton.setTitleColor(.white, for: .normal)
+        restartButton.setTitleShadowColor(.black, for: .normal)
+        restartButton.backgroundColor = UIColor(red: 225.0/255.0, green: 72.0/255.0, blue: 0.0/255.0, alpha: 1)
+        restartButton.frame = CGRect(x: 60, y: 700, width: 300, height: 50)
+        restartButton.layer.cornerRadius = 10
+        view.addSubview(restartButton)
     }
     
     func setupConstraints() {
@@ -54,17 +76,21 @@ class ResultViewController: UIViewController {
             resultTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             resultTitleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
             
-            answersLabel.topAnchor.constraint(equalTo: resultTitleLabel.bottomAnchor, constant: 25),
+            answersLabel.topAnchor.constraint(equalTo: resultTitleLabel.bottomAnchor, constant: 40),
             answersLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 5),
 
             correctAnswerLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 5),
-            correctAnswerLabel.topAnchor.constraint(equalTo: answersLabel.bottomAnchor, constant: 10),
+            correctAnswerLabel.topAnchor.constraint(equalTo: answersLabel.bottomAnchor, constant: 20),
 
             wrongAnswerLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor, constant: 5),
-            wrongAnswerLabel.topAnchor.constraint(equalTo: correctAnswerLabel.bottomAnchor, constant: 10),
+            wrongAnswerLabel.topAnchor.constraint(equalTo: correctAnswerLabel.bottomAnchor, constant: 20),
+            
+            percentAnswerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            percentAnswerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
 }
+
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
