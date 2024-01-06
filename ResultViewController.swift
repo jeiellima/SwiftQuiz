@@ -36,21 +36,20 @@ class ResultViewController: UIViewController {
         answersLabel.translatesAutoresizingMaskIntoConstraints = false
         answersLabel.text = "Perguntas respondidas: 00"
         answersLabel.font = .systemFont(ofSize: 20)
+        answersLabel.textColor = .black
         view.addSubview(answersLabel)
         
         correctAnswerLabel = UILabel()
         correctAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
         correctAnswerLabel.text = "Respostas corretas: 00"
-        correctAnswerLabel.textColor = .white
-        correctAnswerLabel.backgroundColor = .systemGreen
+        correctAnswerLabel.textColor = UIColor(red: 0.0/255.0, green: 125.0/255.0, blue: 0.0/255.0, alpha: 1)
         correctAnswerLabel.font = .systemFont(ofSize: 20)
         view.addSubview(correctAnswerLabel)
         
         wrongAnswerLabel = UILabel()
         wrongAnswerLabel.translatesAutoresizingMaskIntoConstraints = false
         wrongAnswerLabel.text = "Respostas erradas: 00"
-        wrongAnswerLabel.textColor = .white
-        wrongAnswerLabel.backgroundColor = .systemRed
+        wrongAnswerLabel.textColor = UIColor(red: 225.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1)
         wrongAnswerLabel.font = .systemFont(ofSize: 20)
         view.addSubview(wrongAnswerLabel)
         
