@@ -60,9 +60,10 @@ class ViewController: UIViewController {
     @objc func buttonAction(sender: UIButton!) {
         let btnsendtag: UIButton = sender
         if btnsendtag.tag == 1 {
-            //show segue
-            }
-            dismiss(animated: true, completion: nil)
-            print("button clicked")
+            let quizViewController = QuizViewController()
+            navigationController?.pushViewController(quizViewController, animated: true)
+        }
+//            dismiss(animated: true, completion: nil)
+//            print("button clicked")
     }
 }
