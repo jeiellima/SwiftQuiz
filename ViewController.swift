@@ -63,7 +63,5 @@ class ViewController: UIViewController {
             let quizViewController = QuizViewController()
             navigationController?.pushViewController(quizViewController, animated: true)
         }
-//            dismiss(animated: true, completion: nil)
-//            print("button clicked")
     }
 }

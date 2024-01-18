@@ -103,47 +103,5 @@ class ResultViewController: UIViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
         dismiss(animated: true, completion: nil)
-        print("button clicked")
     }
 }
-
-//
-//#if canImport(SwiftUI) && DEBUG
-//import SwiftUI
-//struct UIViewControllerPreview<ResultViewController: UIViewController>: UIViewControllerRepresentable {
-//    let viewController: ResultViewController
-//
-//    init(_ builder: @escaping () -> ResultViewController) {
-//        viewController = builder()
-//    }
-//
-//    // MARK: - UIViewControllerRepresentable
-//    func makeUIViewController(context: Context) -> ResultViewController {
-//        viewController
-//    }
-//
-//    func updateUIViewController(_ uiViewController: ResultViewController, context: UIViewControllerRepresentableContext<UIViewControllerPreview<ResultViewController>>) {
-//        return
-//    }
-//}
-//#endif
-//
-//#if canImport(SwiftUI) && DEBUG
-//import SwiftUI
-//
-//let deviceNames: [String] = [
-//    "iPhone 11 Pro Max",
-//]
-//
-//@available(iOS 13.0, *)
-//struct ViewController_Preview: PreviewProvider {
-//  static var previews: some View {
-//    ForEach(deviceNames, id: \.self) { deviceName in
-//      UIViewControllerPreview {
-//        ResultViewController()
-//      }.previewDevice(PreviewDevice(rawValue: deviceName))
-//        .previewDisplayName(deviceName)
-//    }
-//  }
-//}
-//#endif
